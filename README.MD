@@ -1,6 +1,6 @@
 # electron serial term19
 
-<img src="./screenShot.png">
+<img src="./screenshot.png">
 
 main.js
     const store = require('./store');
