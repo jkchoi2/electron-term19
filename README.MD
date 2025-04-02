@@ -2,6 +2,10 @@
 
 <img src="./screenshot.png">
 
+
+
+일렉트론에서 serialport를 IPC를 사용하지 않고, renderer.js에서 require()하여 사용한 예제입니다.
+
 ```
 main.js
     const store = require('./store');
