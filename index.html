@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"  />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <meta http-equiv="Content-Security-Policy"   content="default-src 'self'; script-src 'self' 'unsafe-inline'" />
+    <title>electron-SerialTerminal</title>
+  </head>
+  <body>
+    <!-- top toolbar refresh,port,baudrate ... -->
+    <div class="toolbar">
+      <button class="refresh" title="Refresh Ports">↻</button>
+      <select id="port">
+        <option value="">Select Port</option>
+      </select>
+      <select id="baudrate">
+        <option value="300">300</option>
+        <option value="1200">1200</option>
+        <option value="2400">2400</option>
+        <option value="4800">4800</option>
+        <option value="9600">9600</option>
+        <option value="14400">14400</option>
+        <option value="19200">19200</option>
+        <option value="28800">28800</option>
+        <option value="38400">38400</option>
+        <option value="57600">57600</option>
+        <option value="115200" selected>115200</option>
+        <option value="230400">230400</option>
+        <option value="460800">460800</option>
+        <option value="921600">921600</option>
+      </select>
+      <select id="databit">
+        <option value="8" selected>8 bits</option>
+        <option value="7">7 bits</option>
+        <option value="6">6 bits</option>
+        <option value="5">5 bits</option>
+      </select>
+      <select id="stopbit">
+        <option value="1" selected>1 bits</option>
+        <option value="1.5">1.5 bits</option>
+        <option value="2">2 bits</option>
+      </select>
+      <select id="parity">
+        <option value="none" selected>None</option>
+        <option value="even">Even</option>
+        <option value="odd">Odd</option>
+        <option value="mark">Mark</option>
+      </select>
+      <select id="flowcontrol">
+        <option value="none" selected>None</option>
+        <option value="hardware">H/W</option>
+        <option value="software">S/W</option>
+      </select>
+      <div class="button-group">
+        <button  id="connect">Connect</button>
+        <button id="exit">Exit</button>
+      </div>
+    </div>
+  
+    <!--rx setting pannel -->
+    <div class="rx-setting-panel">
+        <input type="checkbox" id="rx-hex" >hex</input>
+        <input type="checkbox" id="rx-ascii" checked>ascii</input>
+        <input type="checkbox" id="rx-timestamp">timestamp</input>
+        <button type="button" id="rx-clear">Clear</button>
+    </div>
+    
+    <!-- receive data panel -->
+    <textarea class="rx-panel" id="rx-text" rows="10" cols="100"></textarea>
+    
+    <!-- transmit data panel -->
+    <div class="tx-panel">
+      <input type="text" id="tx-input" placeholder="Type command here..." autocomplete="off">
+      <div class="line-ending">
+        <label>
+          <input type="checkbox" id="add-cr"> CR
+        </label>
+        <label>
+          <input type="checkbox" id="add-lf" checked> LF
+        </label>
+      </div>
+      <button id="send-btn">Send</button>
+    </div>
+  
+    <!-- footer panel -->
+    <div class="footer">
+      <div class="status">
+        <div class="status-indicator"></div>
+        <span>Disconnected</span>
+        <div class="led">
+          <span>TX</span>
+          <div class="led-icon tx"></div>
+        </div>
+        <div class="led">
+          <span>RX</span>
+          <div class="led-icon rx"></div>
+        </div>
+      </div>
+      <div class="info">
+        <span>Rx: 0 bytes | Tx: 0 bytes</span>
+      </div>
+    </div>
+  
+  </body>
+  <script src="./renderer.js"></script>
+</html>

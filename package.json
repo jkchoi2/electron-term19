@@ -1,0 +1,16 @@
+{
+  "name": "elec-term19",
+  "version": "1.0.0",
+  "main": "main.js",
+  "type": "commonjs",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "electron-store": "^8.2.0",
+    "serialport": "^13.0.0"
+  }
+}
