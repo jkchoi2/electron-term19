@@ -1,4 +1,7 @@
-# electron-term19
+# electron serial term19
+
+<img src="./screenShot.png">
+
 main.js
     const store = require('./store');
     nodeIntegration: true,  // defautlt=false
